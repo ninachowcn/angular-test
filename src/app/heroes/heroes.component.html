@@ -1,0 +1,17 @@
+<!-- 
+  //无法显示因为hero不是一个变量，而是一个对象
+  <p>
+  {{hero}} heroes works!
+</p> 
+-->
+
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor = "let hero of heroes " 
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span class="badge">{{ hero.id }}</span>{{ hero.name }}
+  </li>
+</ul>
+
+<app-hero-detail [hero] = "selectedHero"></app-hero-detail>
